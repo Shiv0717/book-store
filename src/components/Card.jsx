@@ -26,12 +26,13 @@ const Cards = () => {
 
   return (
     <Container className="mt-5">
-      <h1 className="text-center mb-4">Books List</h1>
-      <Row>
+      <h1 className="text-center mb-4">Welcome to Our Bookstore</h1>
+      <p className="text-center mb-5">Discover a vast collection of books available for sale. Find your next read and enjoy your literary journey.</p>
+      <Row xs={1} sm={2} md={3} lg={4} className="g-4">
         {books.length > 0 ? (
           books.map((book, index) => (
-            <Col md={4} className="mb-4" key={index}>
-              <Card className="shadow-lg" style={{ borderRadius: '12px', overflow: 'hidden' }}>
+            <Col key={index}>
+              <Card className="shadow-lg card-hover" style={{ borderRadius: '12px', overflow: 'hidden' }}>
                 {/* Book Image */}
                 <Card.Img 
                   variant="top"
@@ -66,6 +67,17 @@ const Cards = () => {
           </Col>
         )}
       </Row>
+
+      {/* CSS for hover effect */}
+      <style>{`
+        .card-hover {
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-hover:hover {
+          transform: translateY(-10px);
+          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+      `}</style>
     </Container>
   );
 };

@@ -14,6 +14,8 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log('Signing up a user');
+    console.log('API Key:', import.meta.env.VITE_FIREBASE_API_KEY);
+
     try {
       const result = await firebase.signUpUserWithEmailAndPassword(email, password);
       console.log(result);

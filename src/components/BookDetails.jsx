@@ -35,11 +35,13 @@ const BookDetails = () => {
         <Row>
           {/* Left side - Image */}
           <Col md={6}>
-            <Card.Img 
-              src={book.imageUrl || 'https://images.squarespace-cdn.com/content/v1/52537290e4b0e53491ea5c01/1682529825334-041VOE86JSPO3SR90L3R/ACES-interior.jpg'} 
-              alt={book.name} 
-              style={{ height: '100%', objectFit: 'cover', borderRadius: '15px' }}
-            />
+            <div className="overflow-hidden rounded" style={{ height: '100%' }}>
+              <Card.Img 
+                src={book.imageUrl || 'https://images.squarespace-cdn.com/content/v1/52537290e4b0e53491ea5c01/1682529825334-041VOE86JSPO3SR90L3R/ACES-interior.jpg'} 
+                alt={book.name} 
+                className="w-100 h-100 object-fit-cover img-hover"
+              />
+            </div>
           </Col>
 
           {/* Right side - Text */}
@@ -54,11 +56,37 @@ const BookDetails = () => {
               <p style={{ fontSize: '1rem', marginTop: '20px' }}>
                 This book is a remarkable addition to any collection. It offers a compelling story and is a must-read for all book lovers.
               </p>
-              <Button variant="primary" onClick={() => window.history.back()} style={{ fontSize: '1rem', padding: '10px 30px' }}>Go Back</Button>
+              <Button 
+                variant="primary" 
+                onClick={() => window.history.back()} 
+                className="btn-hover"
+              >
+                Go Back
+              </Button>
             </Card.Body>
           </Col>
         </Row>
       </Card>
+
+      {/* CSS for Hover Effects using Bootstrap */}
+      <style>
+        {`
+          .img-hover {
+            transition: transform 0.3s ease;
+          }
+          .img-hover:hover {
+            transform: scale(1.05);
+          }
+
+          .btn-hover {
+            transition: background-color 0.3s ease, transform 0.3s ease;
+          }
+          .btn-hover:hover {
+            background-color: #0d6efd;
+            transform: scale(1.05);
+          }
+        `}
+      </style>
     </Container>
   );
 };

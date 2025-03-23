@@ -12,6 +12,8 @@ const Login = () => {
   const firebase = useFirebase();
   console.log(firebase);
 
+
+
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -25,6 +27,7 @@ const Login = () => {
     console.log('Logging in a user');
     const result = await firebase.signInUserWithEmailAndPassword(email, password);
     console.log(result);
+   
   }
 
   return (

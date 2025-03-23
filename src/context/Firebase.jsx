@@ -12,6 +12,9 @@ import { updateProfile } from 'firebase/auth';
 
 const FirebaseContext = createContext();
 
+
+
+
 const firebaseConfig = {
   apiKey: "AIzaSyCO0SE6HYyd4vUWgz1wliX1VUGPHcovY6g",
   authDomain: "drive-a6371.firebaseapp.com",
@@ -72,6 +75,7 @@ export const FirebaseProvider = ({ children }) => {
       userEmail: user.email,
       author: author,
       userDisplayName: user.displayName,
+     
     });
      
    }
