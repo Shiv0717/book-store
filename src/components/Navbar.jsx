@@ -26,7 +26,7 @@ const MyNavbar = () => {
   return (
     <Navbar style={{ backgroundColor: '#0C6DFD' }} variant="dark" expand="lg">
       <Container>
-        <Navbar.Brand style={{ cursor: 'pointer', color: '#fff' }} onClick={handleHome}>Book Store</Navbar.Brand>
+        <Navbar.Brand style={{ cursor: 'pointer', color: '#fff' }} onClick={handleHome}>BookStore</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">

@@ -16,13 +16,13 @@ const FirebaseContext = createContext();
 
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCO0SE6HYyd4vUWgz1wliX1VUGPHcovY6g",
-  authDomain: "drive-a6371.firebaseapp.com",
-  projectId: "drive-a6371",
-  storageBucket: "drive-a6371.firebasestorage.app",
-  messagingSenderId: "949821682416",
-  appId: "1:949821682416:web:ff8e20f6913c890e48c835",
-  measurementId: "G-56C9L65YGZ"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_APP_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECTID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_APP_MESSAGE_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
+  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID
 };
 
 const getBookById = async (id) => {
